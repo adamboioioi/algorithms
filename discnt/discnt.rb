@@ -51,7 +51,8 @@ def discover_best_min_amount(sorted_prices)
   sorted_prices.each do |index|
 
     if purchase_step.eql?(2)
-      total_amount += (sorted_prices.delete_at(sorted_prices.size - 1) * DISCOUNT).round(2)
+      price = sorted_prices.delete_at(sorted_prices.size - 1)
+      total_amount += (price - (price * DISCOUNT)).round(2)
       break
     else
       total_amount += sorted_prices.delete_at(0).round(2)
