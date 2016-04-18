@@ -6,13 +6,6 @@ DISCOUNT           = File.open(input_data_file).each_line.take(2).last.to_i / 10
 
 total_price = 0
 
-def algorithm(prices)
-  sum = 0
-
-  sum += price
-  sum.round(2)
-end
-
 def mergesort(array)
     if array.count <= 1
       return array
