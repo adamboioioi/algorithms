@@ -70,6 +70,9 @@ while sorted_prices.any? do
   total_price += discover_best_min_amount(sorted_prices)
 end
 
+#dirty hack
+total_price = total_price.to_s
+total_price += "0"
 
 File.open(output_result_file, 'w') { |f| f.write(total_price) }
 
