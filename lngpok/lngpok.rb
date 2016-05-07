@@ -25,8 +25,7 @@ def find_longest_card_set
       next
     end
 
-    previous_card_value = set[index - 1] + jocker_diff #TODO change index - 1 to last
-
+    previous_card_value = set.last + jocker_diff
 
     if (card - previous_card_value).eql?(1)
       set << card
@@ -45,14 +44,13 @@ def find_longest_card_set
       end
 
       set << card if (card - set.last).eql?(1)
-
     end
 
   end
 
   jockers.times do |index| set << index  end unless jockers.zero?
-  set
 
+  set
 end
 
 def quick(keys, left, right)
@@ -61,6 +59,7 @@ def quick(keys, left, right)
     quick(keys, left, pivot-1)
     quick(keys, pivot+1, right)
   end
+
   keys
 end
 
