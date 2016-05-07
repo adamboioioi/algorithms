@@ -88,7 +88,7 @@ else
     set = find_longest_card_set
     longest_set = set if longest_set.empty? || set.size > longest_set.size
     $cards.delete_at(0)
-    break if longest_set.size > $cards.size
+    break if longest_set.size > $cards.size + $jockers
   end
 end
 
