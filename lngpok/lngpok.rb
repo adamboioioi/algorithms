@@ -25,7 +25,7 @@ def find_longest_card_set
       next
     end
 
-    previous_card_value = set.last + jocker_diff
+    previous_card_value = set[index - 1] + jocker_diff
 
     if (card - previous_card_value).eql?(1)
       set << card
