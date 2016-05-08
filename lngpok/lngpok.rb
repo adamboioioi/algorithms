@@ -1,7 +1,7 @@
-input_data_file    = ARGV[0].nil? ? "lngpok.in" : ARGV[0]
-output_result_file = ARGV[1].nil? ? "lngpok.out" : ARGV[1]
+input_file    = "lngpok.in"
+output_file = "lngpok.out"
 
-$cards = File.open(input_data_file) { |f| f.readline }.split(" ").map(&:to_i)
+$cards = File.open(input_file) { |f| f.readline }.split(" ").map(&:to_i)
 $jockers = 0
 
 def prepare_game_set
@@ -91,4 +91,4 @@ else
   end
 end
 
-File.open(output_result_file, 'w') { |f| f.write(longest_set.size) }
+File.open(output_file, 'w') { |f| f.write(longest_set.size) }
