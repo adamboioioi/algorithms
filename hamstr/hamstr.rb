@@ -1,5 +1,7 @@
-file = ARGV[0].nil? ? "hamstr.in" : ARGV[0]
+file_in = ARGV[0].nil? ? "hamstr.in" : ARGV[0]
 out = ARGV[1].nil? ? "hamstr.out" : ARGV[1]
+
+file = File.open(file_in)
 
 input_data = file.readlines.map(&:chomp)
 food_stock = input_data.shift.to_i
